@@ -6,12 +6,14 @@ from pydub.playback import play
 from PIL import Image
 
 # Function to call the command line program
-def process_audio(input_file, use_drum):
+def process_audio(input_file, use_drum, use_beatnet):
     output_dir = "C:\\Users\\adars\\Desktop\\kickelhack"
     os.makedirs(output_dir, exist_ok=True)
     cmd = ["C:\\Users\\adars\\PycharmProjects\\BeatVisualizer\\.venv\\Scripts\\python.exe", "C:\\Users\\adars\\PycharmProjects\\BeatVisualizer\\.venv\\Scripts\\beat_detection.py", input_file, output_dir]
     if use_drum:
         cmd.append("--use_drum")
+    if use_beatnet:
+        cmd.append("--use_beatnet")
     subprocess.run(cmd)
 
 
@@ -54,12 +56,15 @@ def main():
     # Checkbox to choose drums
     use_drum = st.checkbox("Use Drums")
 
+    # Checkbox to choose beatnet
+    use_beatnet = st.checkbox("Use BeatNet")
+
     if audio_file:
         # Process button
         if st.button("Process"):
             with open("input.wav", "wb") as file:
                 file.write(audio_file.read())
-            process_audio("input.wav", use_drum)
+            process_audio("input.wav", use_drum, use_beatnet)
 
             # Display outputs
             output_dir = "C:\\Users\\adars\\Desktop\\kickelhack"
