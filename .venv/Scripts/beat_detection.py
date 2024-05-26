@@ -50,7 +50,7 @@ def generate_beat_track(input_file, beat_times, output_dir, beat_type):
     y, sr = librosa.load(input_file)
 
     if beat_type == 'Meow' or beat_type == 'Chicken' or beat_type == 'Guitar':
-        meow_file = "C:\\Users\\adars\\PycharmProjects\\BeatVisualizer\\.venv\\Scripts\\" + beat_type + ".wav"
+        meow_file = "C:\\Users\\adars\\PycharmProjects\\BeatVisualizer\\.venv\\Scripts\\resources\\audio\\" + beat_type + ".wav"
         # Load the cat meow sound
         meow, meow_sr = librosa.load(meow_file, sr=sr)
         # Resample if needed to match the input file's sample rate

@@ -30,7 +30,7 @@ def download_text(text_file):
 
 def main():
     # st.title("Beat Detection Application")
-    st.image("C:\\Users\\adars\\PycharmProjects\\BeatVisualizer\\.venv\\Scripts\\banner.svg", use_column_width=True)
+    st.image("C:\\Users\\adars\\PycharmProjects\\BeatVisualizer\\.venv\\Scripts\\resources\\image\\banner.svg", use_column_width=True)
 
     # Upload audio file
     audio_file = st.file_uploader("Upload Audio File", type=["wav"])
